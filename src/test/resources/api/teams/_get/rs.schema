@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type" : "array",
+    "data" : {
+        "type" : "object",
+        "properties" : {
+            "id" : {
+                "type" : "integer"
+            },
+            "abbreviation" : {
+                "type" : "string"
+            },
+            "city" : {
+                "type" : "string"
+            },
+            "conference" : {
+                "type" : "string"
+            },
+            "division" : {
+                "type" : "string"
+            },
+            "full_name" : {
+                "type" : "string"
+            },
+            "name" : {
+                "type" : "string"
+            }
+        }
+
+    },
+
+    "type" : "object",
+    "meta" : {
+        "type" : "object",
+        "properties": {
+            "total_pages" : {
+                "type" : "integer"
+            },
+            "current_page" : {
+                "type" : "integer"
+            },
+            "next_page" : {
+                "type" : "integer"
+            },
+            "per_page" : {
+                "type" : "integer"
+            },
+            "total_count" : {
+                "type" : "integer"
+            }
+        }
+    }
+
+}

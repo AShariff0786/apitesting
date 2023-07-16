@@ -1,0 +1,184 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type" : "array",
+    "data" : {
+        "type" : "object",
+        "properties" :{
+            "id" : {
+                "type" : "integer"
+            },
+            "ast" : {
+                "type" : "integer"
+            },
+            "blk" : {
+                "type" : "integer"
+            },
+            "dreb" : {
+                "type" : "integer"
+            },
+            "fg3_pct" : {
+                "type" : "integer"
+            },
+            "fg3a" : {
+                "type" : "integer"
+            },
+            "fg3m" : {
+                "type" : "integer"
+            },
+            "fg_pct" : {
+                "type" : "integer"
+            },
+            "fga" : {
+                "type" : "integer"
+            },
+            "fgm" : {
+                "type" : "integer"
+            },
+            "ft_pct" : {
+                "type" : "integer"
+            },
+            "fta" : {
+                "type" : "integer"
+            },
+            "ftm" : {
+                "type" : "integer"
+            },
+            "game" : {
+                "type" : "object",
+                "properties" :{
+                    "id" : {
+                        "type" : "integer"
+                    },
+                    "date" : {
+                        "type" : "string"
+                    },
+                    "home_team_id" : {
+                        "type" : "integer"
+                    },
+                    "home_team_score" : {
+                        "type" : "integer"
+                    },
+                    "period" : {
+                        "type" : "integer"
+                    },
+                    "postseason" : {
+                        "type" : "boolean"
+                    },
+                    "season" : {
+                        "type" : "integer"
+                    },
+                    "status" : {
+                        "type" : "string"
+                    },
+                    "time" : {
+                        "type" : "string"
+                    },
+                    "visitor_team_id" : {
+                        "type" : "integer"
+                    },
+                    "visitor_team_score" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "min" : {
+                "type" : "string"
+            },
+            "oreb" : {
+                "type" : "integer"
+            },
+            "pf" : {
+                "type" : "integer"
+            },
+            "player" : {
+                "type" : "object",
+                "properties" : {
+                    "id" : {
+                        "type" : "integer"
+                    },
+                    "first_name" : {
+                        "type" : "string"
+                    },
+                    "height_feet" : {
+                        "type" : "integer"
+                    },
+                    "height_inches" : {
+                        "type" : "integer"
+                    },
+                    "last_name" : {
+                        "type" : "string"
+                    },
+                    "position" : {
+                        "type" : "string"
+                    },
+                    "team_id" : {
+                        "type" : "integer"
+                    },
+                    "weight_pounds" : {
+                        "type" : "integer"
+                    }
+                }
+            },
+            "pts" : {
+                "type" : "integer"
+            },
+            "reb" : {
+                "type" : "integer"
+            },
+            "stl" : {
+                "type" : "integer"
+            },
+            "team" :{
+                "type" : "object",
+                "properties" : {
+                    "id" : {
+                        "type" : "integer"
+                    },
+                    "abbreviation" : {
+                        "type" : "string"
+                    },
+                    "city" : {
+                        "type" : "string"
+                    },
+                    "conference" : {
+                        "type" : "string"
+                    },
+                    "division" : {
+                        "type" : "string"
+                    },
+                    "full_name" : {
+                        "type" : "string"
+                    },
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },
+            "turnover" : {
+                "type" : "integer"
+            }
+        }
+    },
+
+    "type" : "object",
+     "meta" : {
+        "type" : "object",
+        "properties": {
+            "total_pages" : {
+                "type" : "integer"
+            },
+            "current_page" : {
+                "type" : "integer"
+            },
+            "next_page" : {
+                "type" : "integer"
+            },
+            "per_page" : {
+                "type" : "integer"
+            },
+            "total_count" : {
+                "type" : "integer"
+            }
+        }
+     }
+}

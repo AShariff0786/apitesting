@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type" : "array",
+    "data" : {
+        "type" : "object",
+        "properties" : {
+            "id" : {
+                "type" : "integer"
+            },
+            "date" : {
+                "type" : "string"
+            },
+            "home_team" : {
+                "type" : "object",
+                "properties" : {
+                    "id" : {
+                        "type" : "integer"
+                    },
+                    "abbreviation" : {
+                        "type" : "string"
+                    },
+                    "city" : {
+                        "type" : "string"
+                    },
+                    "conference" : {
+                        "type" : "string"
+                    },
+                    "division" : {
+                        "type" : "string"
+                    },
+                    "full_name" : {
+                        "type" : "string"
+                    },
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },
+            "home_team_score" : {
+                "type" : "integer"
+            },
+            "period" : {
+                "type" : "integer"
+            },
+            "postseason" : {
+                "type" : "boolean"
+            },
+            "season" :{
+                "type" : "integer"
+            },
+            "status" : {
+                "type" : "string"
+            },
+            "time" : {
+                "type" : "string"
+            },
+            "visitor_team" : {
+                "type" : "object",
+                "properties" : {
+                    "id" : {
+                        "type" : "integer"
+                    },
+                    "abbreviation" : {
+                        "type" : "string"
+                    },
+                    "city" : {
+                        "type" : "string"
+                    },
+                    "conference" : {
+                        "type" : "string"
+                    },
+                    "division" : {
+                        "type" : "string"
+                    },
+                    "full_name" : {
+                        "type" : "string"
+                    },
+                    "name" : {
+                        "type" : "string"
+                    }
+                }
+            },
+            "visitor_team_score" : {
+                "type" : "integer"
+            }
+        }
+    },
+
+    "type" : "object",
+     "meta" : {
+        "type" : "object",
+        "properties": {
+            "total_pages" : {
+                "type" : "integer"
+            },
+            "current_page" : {
+                "type" : "integer"
+            },
+            "next_page" : {
+                "type" : "integer"
+            },
+            "per_page" : {
+                "type" : "integer"
+            },
+            "total_count" : {
+                "type" : "integer"
+            }
+        }
+     }
+}
