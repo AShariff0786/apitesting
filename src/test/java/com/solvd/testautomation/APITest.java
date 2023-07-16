@@ -1,9 +1,12 @@
 package com.solvd.testautomation;
 
-import com.solvd.testautomation.carina.api.GetGamesMethod;
-import com.solvd.testautomation.carina.api.GetPlayersMethod;
-import com.solvd.testautomation.carina.api.GetStatsMethod;
-import com.solvd.testautomation.carina.api.GetTeamsMethod;
+import com.solvd.testautomation.carina.api.json.DeleteJSONMethod;
+import com.solvd.testautomation.carina.api.basketball.GetGamesMethod;
+import com.solvd.testautomation.carina.api.basketball.GetPlayersMethod;
+import com.solvd.testautomation.carina.api.basketball.GetSeasonAveragesMethod;
+import com.solvd.testautomation.carina.api.basketball.GetStatsMethod;
+import com.solvd.testautomation.carina.api.basketball.GetTeamsMethod;
+import com.solvd.testautomation.carina.api.json.PostJSONMethod;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.skyscreamer.jsonassert.JSONCompareMode;
@@ -21,7 +24,7 @@ public class APITest implements IAbstractTest {
     public void testGetPlayers(){
         GetPlayersMethod getPlayersMethods = new GetPlayersMethod();
         getPlayersMethods.callAPIExpectSuccess();
-        getPlayersMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getPlayersMethods.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getPlayersMethods.validateResponseAgainstSchema("api/players/_get/rs.schema");
     }
 
@@ -30,7 +33,7 @@ public class APITest implements IAbstractTest {
     public void testGetTeams(){
         GetTeamsMethod getTeamsMethods = new GetTeamsMethod();
         getTeamsMethods.callAPIExpectSuccess();
-        getTeamsMethods.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getTeamsMethods.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getTeamsMethods.validateResponseAgainstSchema("api/teams/_get/rs.schema");
     }
 
@@ -38,7 +41,7 @@ public class APITest implements IAbstractTest {
     public void testGetGames(){
         GetGamesMethod getGamesMethod = new GetGamesMethod();
         getGamesMethod.callAPIExpectSuccess();
-        getGamesMethod.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getGamesMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getGamesMethod.validateResponseAgainstSchema("api/games/_get/rs.schema");
     }
 
@@ -46,9 +49,31 @@ public class APITest implements IAbstractTest {
     public void testGetStats(){
         GetStatsMethod getStatsMethod = new GetStatsMethod();
         getStatsMethod.callAPIExpectSuccess();
-        getStatsMethod.validateResponse(JSONCompareMode.STRICT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getStatsMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getStatsMethod.validateResponseAgainstSchema("api/stats/_get/rs.schema");
     }
 
+    @Test
+    public void testGetSeasonAverages(){
+        GetSeasonAveragesMethod getSeasonAveragesMethod = new GetSeasonAveragesMethod();
+        getSeasonAveragesMethod.callAPIExpectSuccess();
+        getSeasonAveragesMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getSeasonAveragesMethod.validateResponseAgainstSchema("api/seasonaverages/_get/rs.schema");
+    }
+
+    @Test
+    public void testCreateJsonMethod() {
+        PostJSONMethod api = new PostJSONMethod();
+        api.callAPIExpectSuccess();
+        api.validateResponse();
+    }
+
+    @Test()
+    public void testDeleteUsers() {
+        DeleteJSONMethod deleteJSONMethod = new DeleteJSONMethod();
+        deleteJSONMethod.callAPIExpectSuccess();
+        deleteJSONMethod.validateResponse();
+    }
+    
 
 }

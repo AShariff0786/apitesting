@@ -1,0 +1,99 @@
+{
+     "$schema": "http://json-schema.org/draft-04/schema#",
+     "type" : "array",
+     "data" : {
+        "type" : "object",
+        "properties" : {
+            "games_played" : {
+                "type"  : "integer"
+            },
+            "player_id"  : {
+                "type" : "integer"
+            },
+            "season" : {
+                "type" : "integer"
+            },
+            "min" : {
+                "type" : "string"
+            },
+            "fgm" : {
+                "type" : "integer"
+            },
+            "fga" : {
+                "type" : "integer"
+            },
+            "fg3m" : {
+                "type" : "integer"
+            },
+            "fg3a" : {
+                "type" : "integer"
+            },
+            "ftm" : {
+                "type" : "integer"
+            },
+            "fta" : {
+                "type" : "integer"
+            },
+            "oreb" : {
+                "type" : "integer"
+            },
+            "dreb" : {
+                "type" : "integer"
+            },
+            "reb" : {
+                "type" : "integer"
+            },
+            "ast" : {
+                "type" : "integer"
+            },
+            "stl" : {
+                "type" : "integer"
+            },
+            "blk" : {
+                "type" : "integer"
+            },
+            "turnover" : {
+                "type" : "integer"
+            },
+            "pf" : {
+                "type" : "integer"
+            },
+            "pts" : {
+                "type" : "integer"
+            },
+            "fg_pct" : {
+                "type" : "integer"
+            },
+            "fg3_pct" : {
+                "type" : "integer"
+            },
+            "ft_pct" : {
+                "type" : "integer"
+            }
+
+        }
+     },
+
+
+     "type" : "object",
+     "meta" : {
+        "type" : "object",
+        "properties": {
+            "total_pages" : {
+                "type" : "integer"
+            },
+            "current_page" : {
+                "type" : "integer"
+            },
+            "next_page" : {
+                "type" : "integer"
+            },
+            "per_page" : {
+                "type" : "integer"
+            },
+            "total_count" : {
+                "type" : "integer"
+            }
+        }
+     }
+}

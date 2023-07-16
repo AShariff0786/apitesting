@@ -1,4 +1,4 @@
-package com.solvd.testautomation.carina.api;
+package com.solvd.testautomation.carina.api.basketball;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
@@ -8,12 +8,11 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-
-@Endpoint(url = "${base_url}/teams", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/teams/_get/rs.json")
+@Endpoint(url = "${base_url}/players", methodType = HttpMethodType.GET)
+@ResponseTemplatePath(path = "api/players/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class GetTeamsMethod extends AbstractApiMethodV2 {
-    public GetTeamsMethod(){
+public class GetPlayersMethod extends AbstractApiMethodV2 {
+    public GetPlayersMethod(){
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }
