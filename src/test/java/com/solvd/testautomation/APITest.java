@@ -1,12 +1,14 @@
 package com.solvd.testautomation;
 
-import com.solvd.testautomation.carina.api.json.DeleteJSONMethod;
 import com.solvd.testautomation.carina.api.basketball.GetGamesMethod;
 import com.solvd.testautomation.carina.api.basketball.GetPlayersMethod;
 import com.solvd.testautomation.carina.api.basketball.GetSeasonAveragesMethod;
 import com.solvd.testautomation.carina.api.basketball.GetStatsMethod;
 import com.solvd.testautomation.carina.api.basketball.GetTeamsMethod;
-import com.solvd.testautomation.carina.api.json.PostJSONMethod;
+import com.solvd.testautomation.carina.api.jsonapi.DeleteJSONMethod;
+import com.solvd.testautomation.carina.api.jsonapi.PostJSONMethod;
+import com.solvd.testautomation.carina.api.space.GetAstronautsMethod;
+import com.solvd.testautomation.carina.api.space.GetLaunchMethod;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.skyscreamer.jsonassert.JSONCompareMode;
@@ -62,6 +64,22 @@ public class APITest implements IAbstractTest {
     }
 
     @Test
+    public void testGetAstronauts(){
+        GetAstronautsMethod getAstronautsMethod = new GetAstronautsMethod();
+        getAstronautsMethod.callAPIExpectSuccess();
+        getAstronautsMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getAstronautsMethod.validateResponseAgainstSchema("api/astronauts/_get/rs.schema");
+    }
+
+    @Test
+    public void testGetLaunch(){
+        GetLaunchMethod getLaunchMethod = new GetLaunchMethod();
+        getLaunchMethod.callAPIExpectSuccess();
+        getLaunchMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getLaunchMethod.validateResponseAgainstSchema("api/launch/_get/rs.schema");
+    }
+
+    @Test
     public void testCreateJsonMethod() {
         PostJSONMethod api = new PostJSONMethod();
         api.callAPIExpectSuccess();
@@ -74,6 +92,5 @@ public class APITest implements IAbstractTest {
         deleteJSONMethod.callAPIExpectSuccess();
         deleteJSONMethod.validateResponse();
     }
-    
 
 }

@@ -1,4 +1,4 @@
-package com.solvd.testautomation.carina.api.json;
+package com.solvd.testautomation.carina.api.jsonapi;
 
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;

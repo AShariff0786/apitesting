@@ -1,0 +1,274 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "next": {
+      "type": "string"
+    },
+    "previous": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "abbrev": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          },
+          "last_updated": {
+            "type": "string"
+          },
+          "net": {
+            "type": "string"
+          },
+          "window_end": {
+            "type": "string"
+          },
+          "window_start": {
+            "type": "string"
+          },
+          "net_precision": {
+            "type": ["string", "null"]
+          },
+          "probability": {
+            "type": ["string", "null"]
+          },
+          "weather_concerns": {
+            "type": ["string", "null"]
+          },
+          "holdreason": {
+            "type": ["string", "null"]
+          },
+          "failreason": {
+            "type": ["string", "null"]
+          },
+          "hashtag": {
+            "type": ["string", "null"]
+          },
+          "launch_service_provider": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "url": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "rocket": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "configuration": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "family": {
+                    "type": "string"
+                  },
+                  "full_name": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "mission": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "launch_designator": {
+                "type": ["string", "null"]
+              },
+              "type": {
+                "type": "string"
+              },
+              "orbit": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "abbrev": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "pad": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "url": {
+                "type": "string"
+              },
+              "agency_id": {
+                "type": ["integer", "null"]
+              },
+              "name": {
+                "type": "string"
+              },
+              "info_url": {
+                "type": ["string", "null"]
+              },
+              "wiki_url": {
+                "type": "string"
+              },
+              "map_url": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "string"
+              },
+              "longitude": {
+                "type": "string"
+              },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "country_code": {
+                    "type": "string"
+                  },
+                  "map_image": {
+                    "type": ["string", "null"]
+                  },
+                  "timezone_name": {
+                    "type": "string"
+                  },
+                  "total_launch_count": {
+                    "type": "integer"
+                  },
+                  "total_landing_count": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "map_image": {
+                "type": ["string", "null"]
+              },
+              "total_launch_count": {
+                "type": "integer"
+              },
+              "orbital_launch_attempt_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "webcast_live": {
+            "type": "boolean"
+          },
+          "image": {
+            "type": ["string", "null"]
+          },
+          "infographic": {
+            "type": ["string", "null"]
+          },
+          "program": {
+            "type": "array",
+            "items": {}
+          },
+          "orbital_launch_attempt_count": {
+            "type": "integer"
+          },
+          "location_launch_attempt_count": {
+            "type": "integer"
+          },
+          "pad_launch_attempt_count": {
+            "type": "integer"
+          },
+          "agency_launch_attempt_count": {
+            "type": "integer"
+          },
+          "orbital_launch_attempt_count_year": {
+            "type": "integer"
+          },
+          "location_launch_attempt_count_year": {
+            "type": "integer"
+          },
+          "pad_launch_attempt_count_year": {
+            "type": "integer"
+          },
+          "agency_launch_attempt_count_year": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "next": {
+      "type": "string"
+    },
+    "previous": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "type": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "in_space": {
+            "type": "boolean"
+          },
+          "time_in_space": {
+            "type": "string"
+          },
+          "eva_time": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          },
+          "date_of_birth": {
+            "type": "string"
+          },
+          "date_of_death": {
+            "type": ["string", "null"]
+          },
+          "nationality": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": ["string", "null"]
+          },
+          "instagram": {
+            "type": ["string", "null"]
+          },
+          "wiki": {
+            "type": ["string", "null"]
+          },
+          "agency": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "url": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "type": {
+                "type": "string"
+              },
+              "country_code": {
+                "type": "string"
+              },
+              "abbrev": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "administrator": {
+                "type": "string"
+              },
+              "founding_year": {
+                "type": "string"
+              },
+              "launchers": {
+                "type": "string"
+              },
+              "spacecraft": {
+                "type": "string"
+              },
+              "parent": {
+                 "type": ["string", "null"]
+              },
+              "image_url": {
+                "type": ["string", "null"]
+              },
+              "logo_url": {
+                "type": "string"
+              }
+            }
+          },
+          "profile_image": {
+            "type": "string"
+          },
+          "profile_image_thumbnail": {
+            "type": "string"
+          },
+          "flights_count": {
+            "type": "integer"
+          },
+          "landings_count": {
+            "type": "integer"
+          },
+          "spacewalks_count": {
+            "type": "integer"
+          },
+          "last_flight": {
+            "type": "string"
+          },
+          "first_flight": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
