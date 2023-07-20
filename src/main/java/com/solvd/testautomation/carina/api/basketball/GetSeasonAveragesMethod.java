@@ -9,11 +9,13 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 
-@Endpoint(url = "${base_url}/season_averages/?season=2018&player_ids[]=1&player_ids[]=2&player_ids[]=17", methodType = HttpMethodType.GET)
+@Endpoint(url = "${base_url}/season_averages/?season=${season}&player_ids[]=${player_id}", methodType = HttpMethodType.GET)
 @ResponseTemplatePath(path = "api/seasonaverages/_get/rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetSeasonAveragesMethod extends AbstractApiMethodV2{
-    public GetSeasonAveragesMethod(){
+    public GetSeasonAveragesMethod(String season, String playerId){
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
+        replaceUrlPlaceholder("season", season);
+        replaceUrlPlaceholder("player_id", playerId);
     }
 }

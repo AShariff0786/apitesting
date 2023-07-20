@@ -17,7 +17,7 @@
                 "type" : "integer"
             },
             "fg3_pct" : {
-                "type" : "integer"
+                "type" : ["double", "null"]
             },
             "fg3a" : {
                 "type" : "integer"
@@ -26,7 +26,7 @@
                 "type" : "integer"
             },
             "fg_pct" : {
-                "type" : "integer"
+                "type" : ["double", "null"]
             },
             "fga" : {
                 "type" : "integer"
@@ -35,7 +35,7 @@
                 "type" : "integer"
             },
             "ft_pct" : {
-                "type" : "integer"
+                "type" : ["double", "null"]
             },
             "fta" : {
                 "type" : "integer"
@@ -100,10 +100,10 @@
                         "type" : "string"
                     },
                     "height_feet" : {
-                        "type" : "integer"
+                        "type" : ["integer", "null"]
                     },
                     "height_inches" : {
-                        "type" : "integer"
+                        "type" : ["integer", "null"]
                     },
                     "last_name" : {
                         "type" : "string"
@@ -115,7 +115,7 @@
                         "type" : "integer"
                     },
                     "weight_pounds" : {
-                        "type" : "integer"
+                        "type" : ["integer", "null"]
                     }
                 }
             },

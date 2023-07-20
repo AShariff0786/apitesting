@@ -17,58 +17,58 @@
                 "type" : "string"
             },
             "fgm" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fga" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fg3m" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fg3a" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "ftm" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fta" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "oreb" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "dreb" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "reb" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "ast" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "stl" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "blk" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "turnover" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "pf" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "pts" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fg_pct" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "fg3_pct" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "ft_pct" : {
-                "type" : "integer"
+                "type" : "double"
             }
 
         }
@@ -80,19 +80,19 @@
         "type" : "object",
         "properties": {
             "total_pages" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "current_page" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "next_page" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "per_page" : {
-                "type" : "integer"
+                "type" : "double"
             },
             "total_count" : {
-                "type" : "integer"
+                "type" : "double"
             }
         }
      }
