@@ -1,5 +1,6 @@
 {
-  "data": [{
+  "data": [
+    {
     "id": "type:Integer",
     "ast": "type:Integer",
     "blk": "type:Integer",

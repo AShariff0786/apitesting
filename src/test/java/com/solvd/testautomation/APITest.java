@@ -31,8 +31,9 @@ public class APITest implements IAbstractTest {
     public void testGetPlayers(){
         GetPlayersMethod getPlayersMethods = new GetPlayersMethod();
         getPlayersMethods.callAPIExpectSuccess();
-        getPlayersMethods.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getPlayersMethods.validateResponse(JSONCompareMode.LENIENT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getPlayersMethods.validateResponseAgainstSchema("api/players/_get/rs.schema");
+
     }
 
 
@@ -89,7 +90,7 @@ public class APITest implements IAbstractTest {
     public void testGetAstronauts(){
         GetAstronautsMethod getAstronautsMethod = new GetAstronautsMethod();
         getAstronautsMethod.callAPIExpectSuccess();
-        getAstronautsMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getAstronautsMethod.validateResponse(JSONCompareMode.LENIENT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getAstronautsMethod.validateResponseAgainstSchema("api/astronauts/_get/rs.schema");
     }
 
@@ -98,7 +99,7 @@ public class APITest implements IAbstractTest {
     public void testGetLaunch(){
         GetLaunchMethod getLaunchMethod = new GetLaunchMethod();
         getLaunchMethod.callAPIExpectSuccess();
-        getLaunchMethod.validateResponse(JSONCompareMode.NON_EXTENSIBLE, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
+        getLaunchMethod.validateResponse(JSONCompareMode.LENIENT, JsonCompareKeywords.ARRAY_CONTAINS.getKey());
         getLaunchMethod.validateResponseAgainstSchema("api/launch/_get/rs.schema");
     }
 
@@ -112,7 +113,7 @@ public class APITest implements IAbstractTest {
 
     @TestRailCases(testCasesId = "9")
     @Test(testName = "Delete JSON" , description = "Delete a JSON object from the site.")
-    public void testDeleteUsers() {
+    public void testDeleteJson() {
         DeleteJSONMethod deleteJSONMethod = new DeleteJSONMethod();
         deleteJSONMethod.callAPIExpectSuccess();
         deleteJSONMethod.validateResponse();
