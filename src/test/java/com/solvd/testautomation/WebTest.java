@@ -5,12 +5,16 @@ import com.solvd.testautomation.carina.web.GamesPageBase;
 import com.solvd.testautomation.carina.web.HomePageBase;
 import com.solvd.testautomation.carina.web.LoginPageBase;
 import com.solvd.testautomation.carina.web.NewsPageBase;
+import com.solvd.testautomation.carina.web.PlayerPage;
+import com.solvd.testautomation.carina.web.PlayerPageBase;
 import com.solvd.testautomation.carina.web.SpecificTeamPageBase;
 import com.solvd.testautomation.carina.web.TeamsPageBase;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.report.testrail.TestRailCases;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 
 @MethodOwner(owner = "AShariff0786")
@@ -49,8 +53,14 @@ public class WebTest implements IAbstractTest {
         TeamsPageBase teamsPageBase = homePage.openTeamsPage();
         teamsPageBase.assertPageOpened();
 
-        SpecificTeamPageBase specificTeam = teamsPageBase.openSpecificTeam("knicks");
-        specificTeam.assertPageOpened();
+        SpecificTeamPageBase knicks = teamsPageBase.openSpecificTeam("knicks");
+        knicks.assertPageOpened();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(knicks.readTeamName(), "New York Knicks");
+
+        SpecificTeamPageBase warriors = teamsPageBase.openSpecificTeam("nets");
+        warriors.assertPageOpened();
+        softAssert.assertEquals(warriors.readTeamName(), "Brooklyn Nets");
 
     }
 
@@ -75,7 +85,11 @@ public class WebTest implements IAbstractTest {
 
         AllPlayersPageBase allPlayersPage = homePage.openAllPlayersPage();
         allPlayersPage.assertPageOpened();
-        allPlayersPage.openSpecificPlayer("curry");
+
+        PlayerPageBase curryPage = allPlayersPage.openSpecificPlayer("curry");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(curryPage.readName(), "Seth");
+
     }
 
 }

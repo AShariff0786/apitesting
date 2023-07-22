@@ -8,5 +8,5 @@ public abstract class AllPlayersPageBase extends AbstractPage {
         super(driver);
     }
 
-    public abstract void openSpecificPlayer(String playerName);
+    public abstract PlayerPageBase openSpecificPlayer(String playerName);
 }

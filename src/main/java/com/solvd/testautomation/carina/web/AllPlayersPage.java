@@ -22,9 +22,9 @@ public class AllPlayersPage extends AllPlayersPageBase{
     }
 
     @Override
-    public void openSpecificPlayer(String playerName) {
+    public PlayerPageBase openSpecificPlayer(String playerName) {
         searchBox.type(playerName);
         searchedPlayer.click();
-        initPage(driver, PlayerBasePage.class);
+        return initPage(driver, PlayerPageBase.class);
     }
 }

@@ -7,4 +7,5 @@ public abstract class SpecificTeamPageBase extends AbstractPage {
     public SpecificTeamPageBase(WebDriver driver) {
         super(driver);
     }
+    public abstract String readTeamName();
 }
