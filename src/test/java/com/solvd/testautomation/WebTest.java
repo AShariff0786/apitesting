@@ -7,11 +7,13 @@ import com.solvd.testautomation.carina.web.LoginPageBase;
 import com.solvd.testautomation.carina.web.NewsPageBase;
 import com.solvd.testautomation.carina.web.PlayerPage;
 import com.solvd.testautomation.carina.web.PlayerPageBase;
+import com.solvd.testautomation.carina.web.ProfilePageBase;
 import com.solvd.testautomation.carina.web.SpecificTeamPageBase;
 import com.solvd.testautomation.carina.web.TeamsPageBase;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.report.testrail.TestRailCases;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -23,13 +25,17 @@ public class WebTest implements IAbstractTest {
     @TestRailCases(testCasesId = "10")
     @Test(testName = "Test Login" , description = "Test the ability to login to a web page.")
     public void testLogin(){
-        LoginPageBase loginPage = initPage(getDriver(), LoginPageBase.class);
-        loginPage.open();
-        HomePageBase homePage = loginPage.login();
+        HomePageBase homePage =  initPage(getDriver(), HomePageBase.class);
+        homePage.open();
         homePage.assertPageOpened();
 
-        TeamsPageBase teamsPageBase = homePage.openTeamsPage();
-        teamsPageBase.assertPageOpened();
+        LoginPageBase loginPage = homePage.openLoginPage();
+        loginPage.assertPageOpened();
+        homePage = loginPage.login();
+        homePage.assertPageOpened();
+
+        ProfilePageBase profilePage = homePage.openProfilePage();
+        profilePage.assertPageOpened();
     }
 
     @TestRailCases(testCasesId = "11")

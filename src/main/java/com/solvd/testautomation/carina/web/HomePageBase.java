@@ -19,4 +19,8 @@ public abstract class HomePageBase extends AbstractPage {
     public abstract NewsPageBase openNewsPage();
     public abstract AllPlayersPageBase openAllPlayersPage();
 
+    public abstract ProfilePageBase openProfilePage();
+
+    public abstract LoginPageBase openLoginPage();
+
 }

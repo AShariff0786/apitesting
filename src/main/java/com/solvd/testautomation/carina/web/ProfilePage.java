@@ -10,10 +10,9 @@ public class ProfilePage extends ProfilePageBase {
     @FindBy(xpath = "//img[@title=\"NBA Logo\"]")
     private ExtendedWebElement logo;
 
-    @FindBy(xpath = "//a[@href=\"/games\"]//child::span")
-    private ExtendedWebElement gamesButton;
     public ProfilePage(WebDriver driver) {
         super(driver);
+        setPageURL("/account/nbaprofile");
         setUiLoadedMarker(logo);
     }
 }
