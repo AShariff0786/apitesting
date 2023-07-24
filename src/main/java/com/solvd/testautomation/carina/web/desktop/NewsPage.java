@@ -1,5 +1,6 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
+import com.solvd.testautomation.carina.web.common.NewsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.apache.commons.lang3.StringUtils;

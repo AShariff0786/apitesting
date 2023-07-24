@@ -1,10 +1,9 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
+import com.solvd.testautomation.carina.web.common.GamesPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = GamesPageBase.class)

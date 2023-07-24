@@ -1,4 +1,4 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;

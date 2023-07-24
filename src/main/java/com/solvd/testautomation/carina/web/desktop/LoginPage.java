@@ -1,5 +1,7 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
+import com.solvd.testautomation.carina.web.common.HomePageBase;
+import com.solvd.testautomation.carina.web.common.LoginPageBase;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;

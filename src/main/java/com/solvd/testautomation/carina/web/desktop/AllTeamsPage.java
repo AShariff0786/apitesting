@@ -1,25 +1,25 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
+import com.solvd.testautomation.carina.web.common.SpecificTeamPageBase;
+import com.solvd.testautomation.carina.web.common.TeamsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.naming.ldap.ExtendedRequest;
 import java.time.Duration;
 
 @DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = TeamsPageBase.class)
-public class TeamsPage extends TeamsPageBase{
+public class AllTeamsPage extends TeamsPageBase{
     @FindBy(xpath = "//h1[text()='All Teams']")
     private ExtendedWebElement marker;
 
 
-    public TeamsPage(WebDriver driver) {
+    public AllTeamsPage(WebDriver driver) {
         super(driver);
         setPageURL("/teams");
         setUiLoadedMarker(marker);

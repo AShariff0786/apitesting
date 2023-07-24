@@ -1,17 +1,21 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.desktop;
 
+import com.solvd.testautomation.carina.web.common.AllPlayersPageBase;
+import com.solvd.testautomation.carina.web.common.GamesPageBase;
+import com.solvd.testautomation.carina.web.common.HomePageBase;
+import com.solvd.testautomation.carina.web.common.LoginPageBase;
+import com.solvd.testautomation.carina.web.common.NewsPageBase;
+import com.solvd.testautomation.carina.web.common.ProfilePageBase;
+import com.solvd.testautomation.carina.web.common.TeamsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 @DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = HomePageBase.class)
 public class HomePage extends HomePageBase {
@@ -43,6 +47,10 @@ public class HomePage extends HomePageBase {
     @FindBy(xpath = "//a[@href='/account/sign-in']")
     private ExtendedWebElement signInButton;
 
+    @FindBy(xpath = "//button[text()='No thanks']")
+    private ExtendedWebElement closePopUp;
+
+
     public HomePage(WebDriver driver) {
         super(driver);
         setUiLoadedMarker(logo);
@@ -52,24 +60,28 @@ public class HomePage extends HomePageBase {
     @Override
     public GamesPageBase openGamesPage() {
         gamesButton.click();
+        closePopUp.clickIfPresent();
         return initPage(driver, GamesPageBase.class);
     }
 
     @Override
     public TeamsPageBase openTeamsPage() {
         teamsButton.click();
+        closePopUp.clickIfPresent();
         return initPage(driver, TeamsPageBase.class);
     }
 
     @Override
     public NewsPageBase openNewsPage() {
         newsButton.click();
+        closePopUp.clickIfPresent();
         return initPage(driver, NewsPageBase.class);
     }
 
     @Override
     public AllPlayersPageBase openAllPlayersPage() {
         playersButton.click();
+        closePopUp.clickIfPresent();
         return initPage(driver, AllPlayersPageBase.class);
     }
 
@@ -85,7 +97,9 @@ public class HomePage extends HomePageBase {
     @Override
     public LoginPageBase openLoginPage() {
         profileDropDown.click();
-        signInButton.click();
+        if(signInButton.isElementPresent()) {
+            signInButton.click();
+        }
         return initPage(driver, LoginPageBase.class);
     }
 

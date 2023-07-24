@@ -1,5 +1,6 @@
-package com.solvd.testautomation.carina.web;
+package com.solvd.testautomation.carina.web.common;
 
+import com.solvd.testautomation.carina.web.common.SpecificTeamPageBase;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 

@@ -1,38 +1,44 @@
 package com.solvd.testautomation;
 
-import com.solvd.testautomation.carina.web.AllPlayersPageBase;
-import com.solvd.testautomation.carina.web.GamesPageBase;
-import com.solvd.testautomation.carina.web.HomePageBase;
-import com.solvd.testautomation.carina.web.LoginPageBase;
-import com.solvd.testautomation.carina.web.NewsPageBase;
-import com.solvd.testautomation.carina.web.PlayerPage;
-import com.solvd.testautomation.carina.web.PlayerPageBase;
-import com.solvd.testautomation.carina.web.ProfilePageBase;
-import com.solvd.testautomation.carina.web.SpecificTeamPageBase;
-import com.solvd.testautomation.carina.web.TeamsPageBase;
+import com.solvd.testautomation.carina.web.common.AllPlayersPageBase;
+import com.solvd.testautomation.carina.web.common.GamesPageBase;
+import com.solvd.testautomation.carina.web.common.HomePageBase;
+import com.solvd.testautomation.carina.web.common.LoginPageBase;
+import com.solvd.testautomation.carina.web.common.NewsPageBase;
+import com.solvd.testautomation.carina.web.common.PlayerPageBase;
+import com.solvd.testautomation.carina.web.common.ProfilePageBase;
+import com.solvd.testautomation.carina.web.common.SpecificTeamPageBase;
+import com.solvd.testautomation.carina.web.common.TeamsPageBase;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.report.testrail.TestRailCases;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import java.util.List;
 
 
 @MethodOwner(owner = "AShariff0786")
 public class WebTest implements IAbstractTest {
 
     @TestRailCases(testCasesId = "10")
+    @BeforeTest
     @Test(testName = "Test Login" , description = "Test the ability to login to a web page.")
     public void testLogin(){
         HomePageBase homePage =  initPage(getDriver(), HomePageBase.class);
         homePage.open();
         homePage.assertPageOpened();
 
-        LoginPageBase loginPage = homePage.openLoginPage();
-        loginPage.assertPageOpened();
-        homePage = loginPage.login();
-        homePage.assertPageOpened();
+        List<WebElement> loginButton = getDriver().findElements(By.xpath("//a[@href='/account/sign-in']"));
+        if(loginButton.size() > 0) {
+            LoginPageBase loginPage = homePage.openLoginPage();
+            loginPage.assertPageOpened();
+            homePage = loginPage.login();
+            homePage.assertPageOpened();
+        }
 
         ProfilePageBase profilePage = homePage.openProfilePage();
         profilePage.assertPageOpened();
