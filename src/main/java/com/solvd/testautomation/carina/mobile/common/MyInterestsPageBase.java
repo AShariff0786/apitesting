@@ -11,4 +11,6 @@ public abstract class MyInterestsPageBase extends AbstractPage{
     public abstract SpecificTeamPageBase openSpecificTeam(String teamName);
 
     public abstract AddInterestPageBase addInterest();
+
+    public abstract HomePageBase openHomePage();
 }

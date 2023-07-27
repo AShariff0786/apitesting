@@ -7,4 +7,6 @@ public abstract class BoxScorePageBase extends AbstractPage {
     public BoxScorePageBase(WebDriver driver) {
         super(driver);
     }
+
+    public abstract HomePageBase openHomePage();
 }

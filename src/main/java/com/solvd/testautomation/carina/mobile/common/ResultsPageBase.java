@@ -7,4 +7,6 @@ public abstract class ResultsPageBase extends AbstractPage {
     public ResultsPageBase(WebDriver driver) {
         super(driver);
     }
+
+    public abstract HomePageBase openHomePage();
 }

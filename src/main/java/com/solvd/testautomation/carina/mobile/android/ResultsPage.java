@@ -1,5 +1,6 @@
 package com.solvd.testautomation.carina.mobile.android;
 
+import com.solvd.testautomation.carina.mobile.common.HomePageBase;
 import com.solvd.testautomation.carina.mobile.common.ResultsPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
@@ -10,8 +11,17 @@ import org.openqa.selenium.support.FindBy;
 public class ResultsPage extends ResultsPageBase {
     @FindBy(id = "team_name")
     private ExtendedWebElement name;
+
+    @FindBy(id="home")
+    private ExtendedWebElement homeButton;
     public ResultsPage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    public HomePageBase openHomePage() {
+        homeButton.click();
+        return initPage(driver, HomePageBase.class);
     }
 
     @Override

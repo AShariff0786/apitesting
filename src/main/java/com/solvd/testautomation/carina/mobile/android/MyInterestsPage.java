@@ -1,6 +1,7 @@
 package com.solvd.testautomation.carina.mobile.android;
 
 import com.solvd.testautomation.carina.mobile.common.AddInterestPageBase;
+import com.solvd.testautomation.carina.mobile.common.HomePageBase;
 import com.solvd.testautomation.carina.mobile.common.MyInterestsPageBase;
 import com.solvd.testautomation.carina.mobile.common.SpecificTeamPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
@@ -17,6 +18,8 @@ public class MyInterestsPage extends MyInterestsPageBase {
 
     @FindBy(id="add_button")
     private ExtendedWebElement addButton;
+    @FindBy(id="home")
+    private ExtendedWebElement homeButton;
 
     public MyInterestsPage(WebDriver driver) {
         super(driver);
@@ -30,10 +33,18 @@ public class MyInterestsPage extends MyInterestsPageBase {
     }
 
     @Override
+    public HomePageBase openHomePage() {
+        homeButton.click();
+        return initPage(driver, HomePageBase.class);
+    }
+
+    @Override
     public AddInterestPageBase addInterest() {
         addButton.click();
         return initPage(driver, AddInterestPageBase.class);
     }
+
+
 
     @Override
     public boolean isPageOpened() {

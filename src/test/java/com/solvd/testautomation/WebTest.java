@@ -24,7 +24,7 @@ import java.util.List;
 @MethodOwner(owner = "AShariff0786")
 public class WebTest implements IAbstractTest {
 
-    @TestRailCases(testCasesId = "10")
+
     @BeforeTest
     @Test(testName = "Test Login" , description = "Test the ability to login to a web page.")
     public void testLogin(){
@@ -32,6 +32,7 @@ public class WebTest implements IAbstractTest {
         homePage.open();
         homePage.assertPageOpened();
 
+        //checks if user is already logged in
         List<WebElement> loginButton = getDriver().findElements(By.xpath("//a[@href='/account/sign-in']"));
         if(loginButton.size() > 0) {
             LoginPageBase loginPage = homePage.openLoginPage();
@@ -44,7 +45,6 @@ public class WebTest implements IAbstractTest {
         profilePage.assertPageOpened();
     }
 
-    @TestRailCases(testCasesId = "11")
     @Test(testName = "Test Games Page" , description = "Test ability to get to Games page from home page.")
     public void testGamesPage(){
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
@@ -55,7 +55,6 @@ public class WebTest implements IAbstractTest {
         gamesPageBase.assertPageOpened();
     }
 
-    @TestRailCases(testCasesId = "12")
     @Test(testName = "Test Team Page" , description = "Checks the ability to goto a specific team page.")
     public void testTeamPage(){
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
@@ -76,7 +75,6 @@ public class WebTest implements IAbstractTest {
 
     }
 
-    @TestRailCases(testCasesId = "13")
     @Test(testName = "Test News Page" , description = "Checks Latest News and Display News Related to Searched Term")
     public void testNewsPage(){
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
@@ -88,7 +86,6 @@ public class WebTest implements IAbstractTest {
         newsPage.openSearchedNews("cav");
     }
 
-    @TestRailCases(testCasesId = "14")
     @Test(testName = "Test Specific Player Page" , description = "Checks Stats of the Searched Player")
     public void testSpecificPlayerPage(){
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);

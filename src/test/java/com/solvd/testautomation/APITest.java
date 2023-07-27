@@ -26,7 +26,6 @@ public class APITest implements IAbstractTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @TestRailCases(testCasesId = "1")
     @Test(testName = "Get Players" , description = "Get All the Players Currently in the NBA.")
     public void testGetPlayers(){
         GetPlayersMethod getPlayersMethods = new GetPlayersMethod();
@@ -37,7 +36,7 @@ public class APITest implements IAbstractTest {
     }
 
 
-    @TestRailCases(testCasesId = "2")
+
     @Test(testName = "Get Teams" , description = "Get All the Teams Currently in the NBA.")
     public void testGetTeams(){
         GetTeamsMethod getTeamsMethods = new GetTeamsMethod();
@@ -46,7 +45,7 @@ public class APITest implements IAbstractTest {
         getTeamsMethods.validateResponseAgainstSchema("api/teams/_get/rs.schema");
     }
 
-    @TestRailCases(testCasesId = "3")
+
     @Test(testName = "Get Games" , description = "Get statistics of every game that was played and the outcome of the game.")
     public void testGetGames(){
         GetGamesMethod getGamesMethod = new GetGamesMethod();
@@ -65,7 +64,6 @@ public class APITest implements IAbstractTest {
     }
 
 
-    @TestRailCases(testCasesId = "4")
     @Test(testName = "Get Stats" , description = "Get All Game Stats for a Player in a Season",
             dataProvider = "playersProvider")
     public void testGetStats(String season, String playerId){
@@ -75,7 +73,6 @@ public class APITest implements IAbstractTest {
         getStatsMethod.validateResponseAgainstSchema("api/stats/_get/rs.schema");
     }
 
-    @TestRailCases(testCasesId = "5")
     @Test(testName = "Get Season Averages" , description = "Get The Average of Stats for a Player in a Season",
             dataProvider = "playersProvider")
     public void testGetSeasonAverages(String season, String playerId){
@@ -85,7 +82,6 @@ public class APITest implements IAbstractTest {
         getSeasonAveragesMethod.validateResponseAgainstSchema("api/seasonaverages/_get/rs.schema");
     }
 
-    @TestRailCases(testCasesId = "6")
     @Test(testName = "Get Astronauts" , description = "Get all the astronauts from NASA.")
     public void testGetAstronauts(){
         GetAstronautsMethod getAstronautsMethod = new GetAstronautsMethod();
@@ -94,7 +90,6 @@ public class APITest implements IAbstractTest {
         getAstronautsMethod.validateResponseAgainstSchema("api/astronauts/_get/rs.schema");
     }
 
-    @TestRailCases(testCasesId = "7")
     @Test(testName = "Get Launch" , description = "Get Every space launch from NASA.")
     public void testGetLaunch(){
         GetLaunchMethod getLaunchMethod = new GetLaunchMethod();
@@ -103,7 +98,6 @@ public class APITest implements IAbstractTest {
         getLaunchMethod.validateResponseAgainstSchema("api/launch/_get/rs.schema");
     }
 
-    @TestRailCases(testCasesId = "8")
     @Test(testName = "Create JSON" , description = "Post a created JSON object to the site.")
     public void testCreateJsonMethod() {
         PostJSONMethod api = new PostJSONMethod();
@@ -111,7 +105,6 @@ public class APITest implements IAbstractTest {
         api.validateResponse();
     }
 
-    @TestRailCases(testCasesId = "9")
     @Test(testName = "Delete JSON" , description = "Delete a JSON object from the site.")
     public void testDeleteJson() {
         DeleteJSONMethod deleteJSONMethod = new DeleteJSONMethod();
