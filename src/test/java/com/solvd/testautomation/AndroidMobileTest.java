@@ -26,7 +26,7 @@ public class AndroidMobileTest implements IAbstractTest, IMobileUtils {
     @BeforeClass
     @Test(testName = "Test Profile Set Up" , description = "Test the ability to set up user profile on apps first launch.")
     public void testProfileSetUp(){
-    /*  String apkpath="../testautomation/src/main/resources/bleacher_report.apk";
+/*      String apkpath="../testautomation/src/main/resources/bleacher_report.apk";
         File app=new File(apkpath);
         R.CONFIG.put("capabilities.app", app.getAbsolutePath());*/
 

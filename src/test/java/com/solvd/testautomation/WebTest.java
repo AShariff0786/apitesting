@@ -83,7 +83,7 @@ public class WebTest implements IAbstractTest {
 
         NewsPageBase newsPage = homePage.openNewsPage();
         newsPage.assertPageOpened();
-        newsPage.openSearchedNews("cav");
+        newsPage.openSearchedNews("Pelicans");
     }
 
     @Test(testName = "Test Specific Player Page" , description = "Checks Stats of the Searched Player")

@@ -1,4 +1,4 @@
-package com.solvd.testautomation.carina.web.desktop;
+package com.solvd.testautomation.carina.web.mobile;
 
 import com.solvd.testautomation.carina.web.common.NewsItem;
 import com.solvd.testautomation.carina.web.common.NewsPageBase;
@@ -15,28 +15,26 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 import java.util.stream.IntStream;
 
-@DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = NewsPageBase.class)
-public class NewsPage extends NewsPageBase{
-    private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = NewsPageBase.class)
+public class NewsPage extends NewsPageBase {
+    private static final Logger LOGGER = LoggerFactory.getLogger(NewsPage.class);
 
     @FindBy(xpath = "//a//img[@title='NBA Logo']")
     private ExtendedWebElement logo;
+
     @FindBy(xpath = "//article[@class='ArticleTile_tileArticle__XV7_D']")
     private List<NewsItem> news;
-
     public NewsPage(WebDriver driver) {
         super(driver);
-        setPageURL("/news");
         setUiLoadedMarker(logo);
     }
 
     @Override
-    public void openSearchedNews(String searchedTerm){
+    public void openSearchedNews(String searchedTerm) {
         IntStream.rangeClosed(0,9).forEach(i ->{
             if(StringUtils.containsAnyIgnoreCase(news.get(i).getLink(), searchedTerm)){
                 LOGGER.info("Links with searched term: " + R.CONFIG.get("url")+ news.get(i).getLink());
             }
         });
     }
-
 }
