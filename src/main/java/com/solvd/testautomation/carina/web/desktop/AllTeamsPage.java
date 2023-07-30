@@ -25,12 +25,4 @@ public class AllTeamsPage extends TeamsPageBase{
         setUiLoadedMarker(marker);
     }
 
-    @Override
-    public SpecificTeamPageBase openSpecificTeam(String teamName) {
-        WebElement link = driver.findElement(By.xpath("//section//parent::a[@href=\"/"+teamName+"/\"]"));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(link));
-        link.click();
-        return initPage(driver, SpecificTeamPageBase.class);
-    }
 }

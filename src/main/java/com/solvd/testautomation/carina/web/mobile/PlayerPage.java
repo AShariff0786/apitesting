@@ -9,19 +9,10 @@ import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = PlayerPageBase.class)
 public class PlayerPage extends PlayerPageBase {
-    @FindBy(xpath = "//a//img[@title='NBA Logo']")
-    private ExtendedWebElement logo;
 
-    @FindBy(xpath = "//p[@class='PlayerSummary_playerNameText___MhqC']")
-    private ExtendedWebElement name;
     public PlayerPage(WebDriver driver) {
         super(driver);
-        setUiLoadedMarker(logo);
+        setUiLoadedMarker(getLogo());
     }
 
-    @Override
-    public String readName() {
-        assertElementPresent(name);
-        return name.getText();
-    }
 }

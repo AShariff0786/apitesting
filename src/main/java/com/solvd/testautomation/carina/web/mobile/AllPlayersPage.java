@@ -11,24 +11,18 @@ import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = AllPlayersPageBase.class)
 public class AllPlayersPage extends AllPlayersPageBase {
-    @FindBy(xpath = "//a//img[@title='NBA Logo']")
-    private ExtendedWebElement logo;
-
     @FindBy(xpath = "//input[@type='text' and @placeholder='Search Players']")
     private ExtendedWebElement searchBox;
 
-    @FindBy(xpath = "//table//a")
-    private ExtendedWebElement searchedPlayer;
-
     public AllPlayersPage(WebDriver driver) {
         super(driver);
-        setUiLoadedMarker(logo);
+        setUiLoadedMarker(getLogo());
     }
 
     @Override
     public PlayerPageBase openSpecificPlayer(String playerName) {
         searchBox.type(playerName);
-        searchedPlayer.click();
+        getSearchedPlayer().click();
         return initPage(driver,PlayerPageBase.class);
     }
 }

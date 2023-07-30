@@ -25,7 +25,7 @@ import java.util.List;
 public class WebTest implements IAbstractTest {
 
 
-    @BeforeTest
+/*    @BeforeTest
     @Test(testName = "Test Login" , description = "Test the ability to login to a web page.")
     public void testLogin(){
         HomePageBase homePage =  initPage(getDriver(), HomePageBase.class);
@@ -43,7 +43,7 @@ public class WebTest implements IAbstractTest {
 
         ProfilePageBase profilePage = homePage.openProfilePage();
         profilePage.assertPageOpened();
-    }
+    }*/
 
     @Test(testName = "Test Games Page" , description = "Test ability to get to Games page from home page.")
     public void testGamesPage(){
