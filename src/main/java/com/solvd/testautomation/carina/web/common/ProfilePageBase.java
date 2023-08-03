@@ -1,8 +1,6 @@
 package com.solvd.testautomation.carina.web.common;
 
-import com.zebrunner.carina.utils.factory.DeviceType;
-import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
+
 import org.openqa.selenium.WebDriver;
 
 

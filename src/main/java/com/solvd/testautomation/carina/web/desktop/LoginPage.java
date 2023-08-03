@@ -27,11 +27,15 @@ public class LoginPage extends LoginPageBase{
         setUiLoadedMarker(logo);
     }
 
+
     @Override
-    public HomePageBase login(){
-        emailTextBox.type(R.TESTDATA.get("user.email"));
-        passwordTextBox.type(R.TESTDATA.get("user.password"));
-        loginButton.click();
-        return initPage(driver, HomePageBase.class);
+    public void typeEmail(String email) {
+        emailTextBox.type(email);
     }
+
+    @Override
+    public void typePassword(String password) {
+        passwordTextBox.type(password);
+    }
+
 }

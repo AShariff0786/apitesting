@@ -16,13 +16,12 @@ public class AllPlayersPage extends AllPlayersPageBase{
 
     public AllPlayersPage(WebDriver driver) {
         super(driver);
-        setUiLoadedMarker(getLogo());
+        setUiLoadedMarker(logo);
     }
 
     @Override
-    public PlayerPageBase openSpecificPlayer(String playerName) {
+    public void searchPlayerName(String playerName){
         searchBox.type(playerName);
-        getSearchedPlayer().click();
-        return initPage(driver, PlayerPageBase.class);
     }
+
 }

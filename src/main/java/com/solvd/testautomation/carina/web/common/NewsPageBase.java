@@ -1,9 +1,8 @@
 package com.solvd.testautomation.carina.web.common;
 
-import com.solvd.testautomation.carina.web.mobile.NewsPage;
+import com.solvd.testautomation.carina.web.uiobjects.NewsItem;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -16,17 +15,10 @@ import java.util.stream.IntStream;
 public abstract class NewsPageBase extends AbstractPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(NewsPageBase.class);
 
-    @FindBy(xpath = "//a//img[@title='NBA Logo']")
-    private ExtendedWebElement logo;
     @FindBy(xpath = "//article[@class='ArticleTile_tileArticle__XV7_D']")
     private List<NewsItem> news;
     public NewsPageBase(WebDriver driver) {
         super(driver);
-    }
-
-
-    public ExtendedWebElement getLogo() {
-        return logo;
     }
 
     public List<NewsItem> getNews() {

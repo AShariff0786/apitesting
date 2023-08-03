@@ -14,10 +14,10 @@ public class LoginPage extends LoginPageBase {
     private ExtendedWebElement logo;
 
     @FindBy(xpath = "//input[@name='email']")
-    private ExtendedWebElement email;
+    private ExtendedWebElement emailTextBox;
 
     @FindBy(xpath = "//input[@name='password']")
-    private ExtendedWebElement password;
+    private ExtendedWebElement passwordTextBox;
 
     @FindBy(xpath = "//button[@type='submit']")
     private ExtendedWebElement signInButton;
@@ -26,12 +26,14 @@ public class LoginPage extends LoginPageBase {
         super(driver);
         setUiLoadedMarker(logo);
     }
+    @Override
+    public void typeEmail(String email) {
+        emailTextBox.type(email);
+    }
 
     @Override
-    public HomePageBase login() {
-        email.type(R.TESTDATA.get("user.email"));
-        password.type(R.TESTDATA.get("user.password"));
-        signInButton.click();
-        return initPage(driver, HomePageBase.class);
+    public void typePassword(String password) {
+        passwordTextBox.type(password);
     }
+
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = ProfilePageBase.class)
 public class ProfilePage extends ProfilePageBase {
-    @FindBy(xpath = "//img[@title=\"NBA Logo\"]")
+    @FindBy(xpath = "//img[@title=\"NBA ID Logo\"]")
     private ExtendedWebElement logo;
 
     public ProfilePage(WebDriver driver) {

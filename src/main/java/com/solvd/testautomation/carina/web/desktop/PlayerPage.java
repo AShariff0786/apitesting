@@ -11,7 +11,7 @@ public class PlayerPage extends PlayerPageBase {
 
     public PlayerPage(WebDriver driver) {
         super(driver);
-        setUiLoadedMarker(getLogo());
+        setUiLoadedMarker(logo);
     }
 
 }
